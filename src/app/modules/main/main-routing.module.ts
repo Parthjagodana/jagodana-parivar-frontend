@@ -6,6 +6,7 @@ import { VillageComponent } from './village/village.component';
 import { HistoryComponent } from './history/history.component';
 import { BusinessHistoryComponent } from './business-history/business-history.component';
 import { MarriageComponent } from './marriage/marriage.component';
+import { BloodsGroupComponent } from './bloods-group/bloods-group.component';
 
 const routes: Routes = [
   {
@@ -41,6 +42,12 @@ const routes: Routes = [
     path: 'marriage',
     component: MarriageComponent,
     data: { title: 'Marriage' },
+    canActivate: [authGuard],
+  },
+  {
+    path: 'bloods-group',
+    component: BloodsGroupComponent,
+    data: { title: 'Bloods Group' },
     canActivate: [authGuard],
   },
 ];

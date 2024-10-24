@@ -15,6 +15,7 @@ import { HistoryComponent } from './history/history.component';
 import { BusinessHistoryComponent } from './business-history/business-history.component';
 import { MembersComponent } from './village/members/members.component';
 import { MarriageComponent } from './marriage/marriage.component';
+import { BloodsGroupComponent } from './bloods-group/bloods-group.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { MarriageComponent } from './marriage/marriage.component';
     HistoryComponent,
     BusinessHistoryComponent,
     MembersComponent,
-    MarriageComponent
+    MarriageComponent,
+    BloodsGroupComponent
   ],
   imports: [
     CommonModule,
