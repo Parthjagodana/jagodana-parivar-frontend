@@ -1,0 +1,25 @@
+.item-card {
+  // width: calc(25% - 10px);
+  padding: 10px;
+  box-shadow: 0px 4px 30px 0px #00000012 !important;
+  border-radius: 10px;
+
+  .mat-mdc-card-content {
+    padding: 0px !important;
+  }
+
+  .mat-icon {
+    font-size: 20px;
+  }
+
+  .img {
+    border-radius: 10px;
+  }
+
+  .header-image {
+    background-color: lightgrey;
+    height: 104.35px;
+    width: 100%;
+    border-radius: 10px;
+  }
+}

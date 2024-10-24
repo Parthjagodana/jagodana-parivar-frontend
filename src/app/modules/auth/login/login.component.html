@@ -1,0 +1,51 @@
+<div fxLayout="column" fxLayoutAlign="center center" class="login-container" fxHide.gt-sm>
+    <mat-card>
+        <h3 fxLayoutAlign="center center" style="text-align: center;">તમારો નોંધાવેલ <br> ફોન નંબર દાખલ કરો</h3>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+          <mat-form-field appearance="outline" class="w-100">
+            <mat-label>ફોન નંબર</mat-label>
+            <input matInput formControlName="phone_no" placeholder="ફોન નંબર" maxlength="10" minlength="10"
+            (keypress)="onKeyPress($event)" (keydown)="restrictZero($event)" required>      
+    
+            <mat-error *ngIf="!this.loginForm.get('phone_no')?.valid && this.loginForm.get('phone_no')?.touched">
+              {{ getErrorPhone() }}
+            </mat-error>
+          </mat-form-field>
+          <div id="recaptcha-container"></div>
+
+          <button mat-raised-button color="primary" type="submit" [disabled]="!loginForm.valid">
+            OTP મોકલો
+          </button>
+        </form>
+    </mat-card>
+  </div>
+
+  <div fxLayout="row" fxLayoutAlign="center center" class="container" fxHide.lt-sm>
+    <mat-card class="left-card" fxLayout="row">
+      <div fxFlex="50">
+        <img src="/image 1.png" alt="Logo" class="logo-img">
+      </div>
+      <div fxFlex="50">
+        <h3>તમારો નોંધાવેલ <br> ફોન નંબર દાખલ કરો</h3>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+          <mat-form-field appearance="outline" class="w-100">
+            <mat-label>ફોન નંબર</mat-label>
+            <input matInput formControlName="phone_no" placeholder="ફોન નંબર" maxlength="10" minlength="10"
+            (keypress)="onKeyPress($event)" (keydown)="restrictZero($event)" required>      
+    
+            <mat-error *ngIf="!this.loginForm.get('phone_no')?.valid && this.loginForm.get('phone_no')?.touched">
+              {{ getErrorPhone() }}
+            </mat-error>
+          </mat-form-field>
+          <div id="recaptcha-container"></div>
+
+          <button mat-raised-button color="primary" type="submit" [disabled]="!loginForm.valid || loading"
+          [class.spinner]="loading">
+            OTP મોકલો
+          </button>
+        </form>
+      </div>
+    </mat-card>
+  
+  </div>
+  

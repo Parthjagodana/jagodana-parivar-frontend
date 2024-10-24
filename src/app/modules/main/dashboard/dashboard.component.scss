@@ -1,0 +1,58 @@
+.welcome-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 10px;
+  }
+  
+  .header {
+    width: 100%;
+    padding: 20px;
+    text-align: left;
+  }
+  
+  .logo {
+    width: 70px;
+    height: 70px;
+    margin-right: 10px;
+  }
+  
+  .welcome-message h3 {
+    font-size: 1.2rem;
+    color: #ff4081;
+    margin: 0;
+  }
+  
+  .banner-card {
+    width: 100%;
+    background-color: #29166f;
+    color: white;
+    margin: 20px 0;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .button-grid {
+    width: 100%;
+    justify-content: space-evenly;
+  }
+  
+  .grid-button {
+    margin: 10px 0;
+    font-size: 14px;
+    height: 60px;
+  }
+  
+  .footer-card {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #A1B5C0 !important;
+    color: #fff !important;
+  }
+  
+  @media (max-width: 600px) {
+    .grid-button {
+      width: 100%;
+    }
+  }
+  

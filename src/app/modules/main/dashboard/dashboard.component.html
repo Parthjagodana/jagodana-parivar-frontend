@@ -1,0 +1,33 @@
+<div fxLayout="column" fxLayoutAlign="center center" class="welcome-container">
+    <!-- Header with Logo and Welcome Message -->
+    <div fxLayout="row" fxLayoutAlign="start center" class="header">
+      <img src="image 1.png" alt="Logo" class="logo" />
+      <div class="welcome-message">
+        <h3>નમસ્તે! જગોદણા પરિવારમાં આપનું સ્વાગત છે.</h3>
+      </div>
+    </div>
+  
+    <!-- Banner for Latest Update -->
+    <mat-card class="banner-card" fxFlex="100" fxFlex.gt-sm="80">
+      <h3>Banner for latest update</h3>
+    </mat-card>
+  
+    <!-- Action Buttons -->
+    <div class="w-100" fxLayout="row wrap" fxLayoutAlign="space-between center">
+        <button 
+          *ngFor="let button of buttons" 
+          mat-raised-button [routerLink]="button.route"
+          [ngStyle]="{'background-color': button.color, 'color': 'white'}" 
+          class="grid-button" 
+          fxFlex.lt-sm="47" 
+          fxFlex="22">
+          {{ button.text }}
+        </button>
+      </div>
+      
+    <!-- Footer -->
+     <div fxLayoutAlign="center center" fxFlex="50">
+        <button mat-raised-button class="footer-card">મુખ્ય કાર્યકારની સભા</button>
+     </div>
+  </div>
+  

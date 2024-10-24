@@ -1,0 +1,54 @@
+<div fxLayout="column" fxLayoutAlign="center center" class="login-container" fxHide.gt-sm>
+    <mat-card>
+      <h3>OTP દાખલ કરો</h3>
+    
+      <!-- OTP Input -->
+      <ng-otp-input
+        [config]="config"
+        (onInputChange)="handleOtpChange($event)">
+      </ng-otp-input>
+    
+      <p>OTP તમારા ફોન પર મોકલવામાં આવ્યું છે</p>
+      <p>Resend in 00:<span>{{ timer }}</span></p>
+    
+      <button mat-raised-button color="primary" (click)="submitOtp()" [disabled]="otp.length !== 4">
+        લોગ ઇન કરો
+      </button>
+    </mat-card>
+  </div>
+  
+    <div fxLayout="row" fxLayoutAlign="center center" class="container" fxHide.lt-sm>
+      <mat-card class="left-card" fxLayout="row">
+        <div fxFlex="50">
+          <img src="image 1.png" alt="Logo" class="logo-img">
+        </div>
+        <div fxFlex="50">
+          <div fxLayout="column" fxLayoutAlign="center center" class="otp-container" fxFlex="80">
+            <h3>OTP દાખલ કરો</h3>
+          
+            <!-- OTP Input -->
+            <ng-otp-input
+              [config]="config"
+              (onInputChange)="handleOtpChange($event)">
+            </ng-otp-input>
+            <p style="color: #ff0000;">{{this.error}}</p>
+            @if (timer === 0) {
+              <a fxLayoutAlign="end center" class="resend-otp" (click)="resendOtp()">
+                OTP ફરિથી મોકલો
+              </a>
+            }
+            <p>OTP તમારા ફોન પર મોકલવામાં આવ્યું છે</p>
+            @if (timer !== 0) {
+              <p>Resend in 00:<span>{{ timer }}</span></p>
+            }
+          
+            <button mat-raised-button color="primary" (click)="submitOtp()" [disabled]="otp.length !== 6 || loading"
+            [class.spinner]="loading">
+              લોગ ઇન કરો
+            </button>
+          </div>
+        </div>
+      </mat-card>
+    
+    </div>
+    

@@ -1,0 +1,38 @@
+<div class="container" fxLayout="column" fxLayoutAlign="start center">
+    <!-- Back Button and Title -->
+    <div fxLayout="row" fxLayoutAlign="start center" class="header">
+        <button mat-icon-button class="back-button" (click)="goBack()">
+          <mat-icon>keyboard_arrow_left</mat-icon>
+        </button>
+        <h3 fxLayoutAlign="center center">વ્યવસાય વિગતો</h3>
+      </div>
+  
+    <!-- Search bar -->
+    <div class="search-container" fxLayout="row" fxLayoutAlign="start center">
+        <mat-form-field class="search-bar" appearance="outline">
+          <mat-icon matPrefix>search</mat-icon>
+          <input matInput placeholder="Search here..." />
+        </mat-form-field>
+
+        <button mat-icon-button class="filter-button">
+          <mat-icon>filter_list</mat-icon>
+        </button>
+      </div>      
+  
+    <!-- Cards -->
+    <div class="cards-container" fxLayoutAlign="space-between" fxLayout="row wrap">
+        <mat-card class="business-card" *ngFor="let business of businesses" fxFlex="49" fxFlex.lt-sm="99">
+          <img mat-card-image [src]="business.image" alt="Business Image" />
+          <mat-card-content>
+            <h3>{{ business.name }}</h3>
+            <p>{{ business.description }}</p>
+            <div class="location" fxLayoutAlign="space-between center">
+                <span fxLayoutAlign="start center" class="icon-div"><mat-icon>location_on</mat-icon>{{ business.location }}</span>
+                <span class="category">{{ business.category }}</span>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+      
+  </div>
+  
