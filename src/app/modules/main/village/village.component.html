@@ -4,10 +4,16 @@
         <button mat-icon-button class="back-button" (click)="goBack()">
           <mat-icon>keyboard_arrow_left</mat-icon>
         </button>
-        <h3 fxLayoutAlign="center center">વ્યવસાય વિગતો</h3>
+        <h3 fxLayoutAlign="center center">ગામ મુજબ ની માહિતી</h3>
     </div>
 
-    <div class="button-grid-container" fxLayout="row wrap" fxLayoutAlign="space-between center">
-        <button mat-button *ngFor="let village of villages" class="text-button" fxFlex="22" fxFlex.lt-sm="47">{{ village }}</button>
+    <div class="button-grid-container village-list">
+        <button mat-button *ngFor="let village of villages" class="text-button">
+            {{ village }}
+            <!-- add here total members of this village-->
+            <b class="w-100 members-count">
+                સભ્યો: <small>256</small>
+            </b>
+        </button>
     </div>
 </div>

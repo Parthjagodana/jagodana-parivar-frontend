@@ -23,7 +23,7 @@
   <div fxLayout="row" fxLayoutAlign="center center" class="container" fxHide.lt-sm>
     <mat-card class="left-card" fxLayout="row">
       <div fxFlex="50">
-        <img src="/image 1.png" alt="Logo" class="logo-img">
+        <img src="logo.png" alt="Logo" class="logo-img">
       </div>
       <div fxFlex="50">
         <h3>તમારો નોંધાવેલ <br> ફોન નંબર દાખલ કરો</h3>
@@ -39,7 +39,7 @@
           </mat-form-field>
           <div id="recaptcha-container"></div>
 
-          <button mat-raised-button color="primary" type="submit" [disabled]="!loginForm.valid || loading"
+          <button mat-raised-button variant="contained" color="primary" type="submit" [disabled]="!loginForm.valid || loading"
           [class.spinner]="loading">
             OTP મોકલો
           </button>
