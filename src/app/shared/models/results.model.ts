@@ -2,7 +2,7 @@ export interface Results<T> {
     data: T,
     error: string[],
     message: string,
-    status: boolean,
+    status: string,
     meta: any,
     code: number
 }

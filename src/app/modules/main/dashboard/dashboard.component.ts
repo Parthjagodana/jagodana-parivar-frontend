@@ -7,17 +7,22 @@ import { Component } from '@angular/core';
 })
 export class DashboardComponent {
   buttons: any[] = [
-    { text: 'પરિવારની ઐતિહાસ', color: '#ffaf7a', route: '/app/history' },
-    { text: 'વ્યાપાર વિશેષ', color: '#4cb4e7', route: '/app/business-history' },
-    { text: 'લક્ષ વિશેષ', color: '#B877D5', route: '/app/marriage' },
-    { text: 'ગામ મુખભ ની માહિતી', color: '#34d2c2', route: '/app/village' },
-    { text: 'બ્લડ ગ્રુપ માહિતી', color: '#f25b5b', route: '/app/bloods-group' },
-    { text: 'ચોકસાઇ', color: '#ffd54f', route: '' },
-    { text: 'કાર્યક્રમ', color: '#43a0f1', route: '' },
-    { text: 'આપત્તકાલીન સંપર્ક', color: '#ff6f80', route: '' },
+    { text: 'પરિવારનો ઐતિહાસ', color: '#ffa467', route: '/app/history' },
+    { text: 'વ્યાપાર વિશેષજ્ઞ', color: '#6C9DFC', route: '/app/business-history' },
+    { text: 'લગ્ન વિશેષજ્ઞ', color: '#B877D5', route: '/app/marriage' },
+    { text: 'ગામ મુજબની માહિતી', color: '#0BD3AF', route: '/app/village' },
+    { text: 'બ્લડ ગ્રુપ માહિતી', color: '#FF6C6C', route: '/app/bloods-group' },
+    { text: 'યોજનાઓ', color: '#f9b700', route: '' },
+    { text: 'કાર્યક્રમ', color: '#3EC0FF', route: '' },
+    { text: 'આપત્તકાલીન સંપર્ક', color: '#FF6CA2', route: '' },
   ];
 
   constructor() {}
 
   ngOnInit(): void {}
+
+  logout() {
+    localStorage.clear();
+    window.location.reload();
+  }
 }

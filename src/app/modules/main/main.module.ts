@@ -7,6 +7,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
+import {MatListModule} from '@angular/material/list';
 
 import { MainRoutingModule } from './main-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -16,6 +17,10 @@ import { BusinessHistoryComponent } from './business-history/business-history.co
 import { MembersComponent } from './village/members/members.component';
 import { MarriageComponent } from './marriage/marriage.component';
 import { BloodsGroupComponent } from './bloods-group/bloods-group.component';
+import { MemberDetailsComponent } from './village/members/member-details/member-details.component';
+import { ProjectComponent } from './project/project.component';
+import { FunctionComponent } from './function/function.component';
+import { EmergencyContactComponent } from './emergency-contact/emergency-contact.component';
 
 
 @NgModule({
@@ -26,7 +31,11 @@ import { BloodsGroupComponent } from './bloods-group/bloods-group.component';
     BusinessHistoryComponent,
     MembersComponent,
     MarriageComponent,
-    BloodsGroupComponent
+    BloodsGroupComponent,
+    MemberDetailsComponent,
+    ProjectComponent,
+    FunctionComponent,
+    EmergencyContactComponent
   ],
   imports: [
     CommonModule,
@@ -36,7 +45,8 @@ import { BloodsGroupComponent } from './bloods-group/bloods-group.component';
     FlexLayoutModule,
     MatDividerModule,
     MatCardModule,
-    MatInputModule
+    MatInputModule,
+    MatListModule
   ]
 })
 export class MainModule { }

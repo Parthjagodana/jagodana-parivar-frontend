@@ -8,7 +8,7 @@
       </div>
   
     <!-- Search bar -->
-    <div class="search-container" fxLayout="row" fxLayoutAlign="start center">
+    <!-- <div class="search-container" fxLayout="row" fxLayoutAlign="start center">
         <mat-form-field class="search-bar" appearance="outline">
           <mat-icon matPrefix>search</mat-icon>
           <input matInput placeholder="Search here..." />
@@ -17,11 +17,12 @@
         <button mat-icon-button class="filter-button">
           <mat-icon>filter_list</mat-icon>
         </button>
-      </div>      
+      </div>       -->
   
     <!-- Cards -->
     <div class="cards-container" fxLayoutAlign="space-between" fxLayout="row wrap">
-        <mat-card class="business-card" *ngFor="let business of businesses" fxFlex="49" fxFlex.lt-sm="99">
+      <h3 class="coming-soon">Coming soon</h3>
+        <!-- <mat-card class="business-card" *ngFor="let business of businesses" fxFlex="49" fxFlex.lt-sm="99">
           <img mat-card-image [src]="business.image" alt="Business Image" />
           <mat-card-content>
             <h3>{{ business.name }}</h3>
@@ -31,7 +32,7 @@
                 <span class="category">{{ business.category }}</span>
             </div>
           </mat-card-content>
-        </mat-card>
+        </mat-card> -->
       </div>
       
   </div>

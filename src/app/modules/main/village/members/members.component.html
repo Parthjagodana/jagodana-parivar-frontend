@@ -1,1 +1,48 @@
-<p>members works!</p>
+<div class="container" fxLayout="column" fxLayoutAlign="start center">
+    <!-- Back Button and Title -->
+    <div fxLayout="row" fxLayoutAlign="start center" class="header">
+      <button mat-icon-button class="back-button" (click)="goBack()">
+        <mat-icon>keyboard_arrow_left</mat-icon>
+      </button>
+      @if (currentHomeTown) {
+        <h3 fxLayoutAlign="center center">{{currentHomeTown.name}}</h3>
+      }
+    </div>
+  
+    <!-- Search bar -->
+    <div class="search-container" fxLayout="row" fxLayoutAlign="center center">
+        <mat-form-field class="search-bar" appearance="outline">
+          <mat-icon matPrefix>search</mat-icon>
+          <input matInput placeholder="Search here..." />
+        </mat-form-field>
+
+        <button mat-icon-button class="filter-button">
+          <mat-icon>filter_list</mat-icon>
+        </button>
+      </div>      
+  
+    <!-- Cards -->  
+    <div class="cards-container member-list" fxLayout="row wrap" fxLayoutAlign="start" fxLayoutGap="10px">
+        <mat-card class="item-card" *ngFor="let item of members" fxFlex="48" fxFlex.lt-sm="100" [routerLink]="'/app/member/' + item._id">
+            <div *ngIf="item.profile_image" class="profile-img">
+                <img mat-card-image [src]="item.profile_image" *ngIf="item.profile_image" alt="Profile Image" />
+            </div>
+            <mat-card-content>
+              <h3>{{ item.name }}</h3>
+              <p class="location">
+                <span fxLayoutAlign="start center" class="icon-div"><mat-icon>location_on</mat-icon></span>
+                {{ item.address }}
+              </p>
+              <!-- <p class="location">
+                <span fxLayoutAlign="start center" class="icon-div"><mat-icon>work</mat-icon></span>
+                વ્યવસાય નું નામ 
+              </p> -->
+            </mat-card-content>
+
+            <!-- <mat-card-actions class="location" fxLayoutAlign="space-between center">
+                    <span class="category">{{ item.age }}</span>
+                    <span fxLayoutAlign="start center" class="icon-div"><mat-icon>bookmark_border</mat-icon></span>
+            </mat-card-actions> -->
+        </mat-card>
+    </div>
+</div>

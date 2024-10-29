@@ -1,7 +1,7 @@
 <div fxLayout="column" fxLayoutAlign="center center" class="welcome-container">
     <!-- Header with Logo and Welcome Message -->
-    <div fxLayout="row" fxLayoutAlign="start center" class="header">
-      <img src="image 1.png" alt="Logo" class="logo" />
+    <div fxLayout="row" fxLayoutAlign="center center" class="header">
+      <img src="logo.png" alt="Logo" class="logo" />
       <div class="welcome-message">
         <h3>નમસ્તે! જગોદણા પરિવારમાં આપનું સ્વાગત છે.</h3>
       </div>
@@ -13,14 +13,12 @@
     </mat-card>
   
     <!-- Action Buttons -->
-    <div class="w-100" fxLayout="row wrap" fxLayoutAlign="space-between center">
+    <div class="w-100 dashboard-btn">
         <button 
           *ngFor="let button of buttons" 
           mat-raised-button [routerLink]="button.route"
           [ngStyle]="{'background-color': button.color, 'color': 'white'}" 
-          class="grid-button" 
-          fxFlex.lt-sm="47" 
-          fxFlex="22">
+          class="grid-button">
           {{ button.text }}
         </button>
       </div>
@@ -28,6 +26,9 @@
     <!-- Footer -->
      <div fxLayoutAlign="center center" fxFlex="50">
         <button mat-raised-button class="footer-card">મુખ્ય કાર્યકારની સભા</button>
+        <button mat-fab class="footer-card" style="margin-left: 10px;" (click)="logout()">
+          <mat-icon>logout</mat-icon>
+        </button>
      </div>
   </div>
   

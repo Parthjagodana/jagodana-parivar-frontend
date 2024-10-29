@@ -1,0 +1,25 @@
+.profile-img {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+
+  img {
+    width: 200px;
+    height: 200px;
+    // object-fit: cover;
+  }
+}
+
+.container {
+    .cards-container {
+        width: 100%;
+        .name-title {
+            font-size: 23px;
+            text-align: center;
+        }
+
+        mat-card-content {
+            margin-top: 20px;
+        }
+    }
+}

@@ -4,9 +4,11 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { authGuard } from '../../core/guards/auth.guard';
 import { VillageComponent } from './village/village.component';
 import { HistoryComponent } from './history/history.component';
+import { MembersComponent } from './village/members/members.component';
 import { BusinessHistoryComponent } from './business-history/business-history.component';
 import { MarriageComponent } from './marriage/marriage.component';
 import { BloodsGroupComponent } from './bloods-group/bloods-group.component';
+import { MemberDetailsComponent } from './village/members/member-details/member-details.component';
 
 const routes: Routes = [
   {
@@ -24,6 +26,18 @@ const routes: Routes = [
     path: 'village',
     component: VillageComponent,
     data: { title: 'village' },
+    canActivate: [authGuard],
+  },
+  {
+    path: ':id/members',
+    component: MembersComponent,
+    data: { title: 'members' },
+    canActivate: [authGuard],
+  },
+  {
+    path: 'member/:memberId',
+    component: MemberDetailsComponent,
+    data: { title: 'member-detail' },
     canActivate: [authGuard],
   },
   {
