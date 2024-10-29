@@ -1,23 +1,45 @@
+import { Location } from '@angular/common';
 import { Component } from '@angular/core';
+import { VillageService } from '../../../../shared/services/village.service';
+import { Member } from '../../../../shared/models/member.model';
+import { ActivatedRoute } from '@angular/router';
+import { Village } from '../../../../shared/models/village.model';
 
 @Component({
   selector: 'app-members',
   templateUrl: './members.component.html',
-  styleUrl: './members.component.scss'
+  styleUrl: './members.component.scss',
 })
 export class MembersComponent {
-  items = [
-    {
-      name: 'અજય જગોદણા', //name of main person "ઘરના મોભીનું નામ"
-      location: 'પીપળી', //village name "મૂળ વતન"
-      age: '૨૫ વર્ષ',
-      image: 'IMG.png',
-    },
-    {
-      name: 'સની જગોદણા',
-      location: 'Ahmedabad',
-      age: '૨૫ વર્ષ',
-      image: 'IMG (1).png',
+  members!: Member[];
+  homeTown!: string;
+  currentHomeTown!: Village;
+
+  constructor(
+    private location: Location,
+    private villageService: VillageService,
+    private route: ActivatedRoute
+  ) {}
+
+  ngOnInit() {
+    this.currentHomeTown = JSON.parse(localStorage.getItem('current_village')!);
+    this.homeTown = this.route.snapshot.paramMap.get('id')!;
+    if (this.homeTown) {
+      this.getMembers(this.homeTown);
     }
-  ];
+  }
+
+  goBack() {
+    this.location.back(); // Navigates to the previous page
+  }
+
+  getMembers(homeTown: string) {
+    this.villageService.memberList({ homeTown }).subscribe((response) => {
+      this.members = response.data;
+    });
+  }
+
+  ngOnDestroy() {
+    localStorage.removeItem('current_village');
+  }
 }

@@ -20,4 +20,9 @@ export class DashboardComponent {
   constructor() {}
 
   ngOnInit(): void {}
+
+  logout() {
+    localStorage.clear();
+    window.location.reload();
+  }
 }

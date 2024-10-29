@@ -8,11 +8,11 @@
     </div>
 
     <div class="button-grid-container village-list">
-        <button mat-button *ngFor="let village of villages" class="text-button">
-            {{ village }}
+        <button mat-button *ngFor="let village of villages" class="text-button" routerLink="/app/{{village._id}}/members" (click)="selectedVillage(village)">
+            {{ village.name }}
             <!-- add here total members of this village-->
             <b class="w-100 members-count">
-                સભ્યો: <small>256</small>
+                સભ્યો: <small>{{village.headOfTheHouse}}</small>
             </b>
         </button>
     </div>
