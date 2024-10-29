@@ -1,9 +1,41 @@
-ng-otp-input {
-    margin-bottom: 10px;
+.login-card {
+  gap: 1.5rem;
+  h6 {
+      font-weight: bold;
   }
-
+  .otp-container {
+      button {
+          &:not(:disabled) {
+              background-color: #005cbb;
+              color: #fff;
+              &:is(:hover, :focus) {
+                  background-color: #004995;
+              }
+          }
+      }
+  }
+}
+.brand-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  img {
+      max-width: 10rem;
+      mix-blend-mode: multiply;
+  }
+}
 .resend-otp{
   color: #3f51b5;
   width: 100%;
   cursor: pointer;
+}
+.otp-container {
+ 
+}
+
+
+@media (max-width: 768px) {
+  .login-card {
+    flex-direction: column !important;
+  }
 }

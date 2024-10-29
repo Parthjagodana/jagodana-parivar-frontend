@@ -1,6 +1,10 @@
 <div fxLayout="column" fxLayoutAlign="center center" class="login-container" fxHide.gt-sm>
-    <mat-card>
-        <h3 fxLayoutAlign="center center" style="text-align: center;">તમારો નોંધાવેલ <br> ફોન નંબર દાખલ કરો</h3>
+    <mat-card class="login-card">
+      <div class="brand-logo">
+        <img src="logo.png" alt="Logo" class="logo-img">
+      </div>
+      <div>
+        <h6 fxLayoutAlign="center center" style="text-align: center;">તમારો નોંધાવેલ ફોન નંબર દાખલ કરો</h6>
         <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
           <mat-form-field appearance="outline" class="w-100">
             <mat-label>ફોન નંબર</mat-label>
@@ -17,16 +21,17 @@
             OTP મોકલો
           </button>
         </form>
+      </div>
     </mat-card>
   </div>
 
   <div fxLayout="row" fxLayoutAlign="center center" class="container" fxHide.lt-sm>
-    <mat-card class="left-card" fxLayout="row">
-      <div fxFlex="50">
+    <mat-card  class="login-card left-card" fxLayout="row" fxLayoutGap="1.5rem">
+      <div class="brand-logo">
         <img src="logo.png" alt="Logo" class="logo-img">
       </div>
-      <div fxFlex="50">
-        <h3>તમારો નોંધાવેલ <br> ફોન નંબર દાખલ કરો</h3>
+      <div>
+        <h6>તમારો નોંધાવેલ ફોન નંબર દાખલ કરો</h6>
         <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
           <mat-form-field appearance="outline" class="w-100">
             <mat-label>ફોન નંબર</mat-label>

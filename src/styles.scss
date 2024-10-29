@@ -356,7 +356,12 @@ button {
   border-top-color: #000000;
   animation: spinner 0.8s linear infinite;
 }
-
-.ng-otp-input-wrapper .otp-input {
-  margin-right: 5px !important;
+ng-otp-input {
+  div {
+    display: flex;
+    gap: 0.3rem;
+    .otp-input {
+      margin: 0 !important;
+    }
+  }
 }
