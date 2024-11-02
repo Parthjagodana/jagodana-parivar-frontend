@@ -1,4 +1,4 @@
-<div class="container" fxLayout="column" fxLayoutAlign="start center">
+<div class="container content-page" fxLayout="column" fxLayoutAlign="start center">
     <!-- Back Button and Title -->
     <div fxLayout="row" fxLayoutAlign="start center" class="header">
       <button mat-icon-button class="back-button" (click)="goBack()">
@@ -41,7 +41,7 @@
                 @if (member.home_town) {
                   <mat-list-item>
                     <span matListItemTitle>મૂળ વતન</span>
-                    {{member.home_town}}
+                    {{member.home_town.name}}
                   </mat-list-item>
                 }
 
@@ -77,6 +77,34 @@
                   <mat-list-item>
                     <span matListItemTitle>અભ્યાસ</span>
                     {{member.education}}
+                  </mat-list-item>
+                }
+
+                @if (member.profession) {
+                  <mat-list-item>
+                    <span matListItemTitle>વ્યવસાય</span>
+                    {{member.profession}}
+                  </mat-list-item>
+                }
+
+                @if (member.profession_description) {
+                  <mat-list-item>
+                    <span matListItemTitle>વ્યવસાય ની વિગત</span>
+                    {{member.profession_description}}
+                  </mat-list-item>
+                }
+
+                @if (member.profession_address) {
+                  <mat-list-item>
+                    <span matListItemTitle>વ્યવસાય નુ સરનામું</span>
+                    {{member.profession_address}}
+                  </mat-list-item>
+                }
+
+                @if (member.profession_city) {
+                  <mat-list-item>
+                    <span matListItemTitle>વ્યવસાય નુ શહેર</span>
+                    {{member.profession_city}}
                   </mat-list-item>
                 }
 
@@ -124,7 +152,7 @@
                 @if (item.home_town) {
                   <mat-list-item>
                     <span matListItemTitle>મૂળ વતન</span>
-                    {{ item.home_town }}
+                    {{ item.home_town.name }}
                   </mat-list-item>
                 }
   
@@ -167,6 +195,34 @@
                   <mat-list-item>
                     <span matListItemTitle>અભ્યાસ</span>
                     {{item.education}}
+                  </mat-list-item>
+                }
+
+                @if (item.profession) {
+                  <mat-list-item>
+                    <span matListItemTitle>વ્યવસાય</span>
+                    {{item.profession}}
+                  </mat-list-item>
+                }
+
+                @if (item.profession_description) {
+                  <mat-list-item>
+                    <span matListItemTitle>વ્યવસાય ની વિગત</span>
+                    {{item.profession_description}}
+                  </mat-list-item>
+                }
+
+                @if (item.profession_address) {
+                  <mat-list-item>
+                    <span matListItemTitle>વ્યવસાય નુ સરનામું</span>
+                    {{item.profession_address}}
+                  </mat-list-item>
+                }
+
+                @if (item.profession_city) {
+                  <mat-list-item>
+                    <span matListItemTitle>વ્યવસાય નુ શહેર</span>
+                    {{item.profession_city}}
                   </mat-list-item>
                 }
 

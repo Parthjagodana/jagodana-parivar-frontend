@@ -21,6 +21,7 @@ import { MemberDetailsComponent } from './village/members/member-details/member-
 import { ProjectComponent } from './project/project.component';
 import { FunctionComponent } from './function/function.component';
 import { EmergencyContactComponent } from './emergency-contact/emergency-contact.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -39,6 +40,7 @@ import { EmergencyContactComponent } from './emergency-contact/emergency-contact
   ],
   imports: [
     CommonModule,
+    FormsModule,
     MainRoutingModule,
     MatIconModule,
     MatButtonModule,

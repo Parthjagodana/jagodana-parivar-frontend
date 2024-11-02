@@ -1,3 +1,5 @@
+import { Village } from "./village.model";
+
 export interface Member {
   _id: string;
   name: string;
@@ -18,7 +20,7 @@ export interface Member {
   blood_group: string;
   maternal_surname: string;
   zone: string;
-  home_town: Date;
+  home_town: Village;
   status: boolean;
   createdAt: Date;
   updatedAt: Date;

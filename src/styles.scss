@@ -228,32 +228,39 @@ button {
   padding: 10px;
 }
 
-.header {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
-  position: relative;
-
-  .back-button {
-    margin-right: 10px;
-    position: absolute;
-    top: -3px;
-    bottom: 0px;
-    left: 0px;
-    padding: 0px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #f4f4f4;
-  }
-
-  h3 {
-    font-size: 1.4rem;
-    font-weight: bold;
-    margin: 0;
-    color: #ff4081;
+.content-page{
+  .header {
+    background: #fff;
+    position: sticky;
+    top: -1px;
+    z-index: 9;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin-bottom: 0;
     width: 100%;
+    .back-button {
+      margin-right: 10px;
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+      padding: 0px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f4f4f4;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    h3 {
+      font-size: 1.4rem;
+      font-weight: bold;
+      margin: 0;
+      color: #ff4081;
+      width: 100%;
+      padding-inline: 3rem;
+      text-align: center;
+      line-height: normal;
+    }
   }
 }
 
@@ -329,22 +336,6 @@ button {
   color: black !important;
 }
 
-/* Add media queries for responsiveness */
-@media (max-width: 600px) {
-  .content-page {
-    padding: 5px;
-    .header h3 {
-      font-size: 1.2rem;
-    }
-    .content h4 {
-      font-size: 1rem;
-    }
-    .content p {
-      font-size: 0.9rem;
-    }
-  }
-}
-
 // spinner
 @keyframes spinner {
   to {
@@ -373,7 +364,7 @@ ng-otp-input {
     gap: 0.3rem;
     .otp-input {
       margin: 0 !important;
-      width: 20px !important;
+      // width: 20px !important;
     }
   }
 }

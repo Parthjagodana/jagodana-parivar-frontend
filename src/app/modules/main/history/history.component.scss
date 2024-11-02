@@ -1,0 +1,21 @@
+.content {
+    margin-top: 1.5rem;
+    h4 {
+        font-weight: 600;
+        font-size: 1.4rem;
+        line-height: normal;
+    }
+    p {
+        font-size: 1.1rem;
+        line-height: 1.6;    
+    }
+}
+
+@media (max-width: 600px) {
+    .content-page {
+      padding: 5px;
+      .header h3 {
+        font-size: 1.2rem;
+      }
+    }
+  }

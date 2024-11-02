@@ -1,0 +1,11 @@
+.cards-container {
+  .project-details-card {
+    img {
+      width: 100%;
+    }
+  }
+
+  .project-details-card:last-child {
+    margin-bottom: 20px;
+  }
+}

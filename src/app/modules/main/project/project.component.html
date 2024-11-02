@@ -1,1 +1,24 @@
-<p>project works!</p>
+<div class="container" fxLayout="column" fxLayoutAlign="start center">
+    <!-- Back Button and Title -->
+    <div fxLayout="row" fxLayoutAlign="start center" class="header">
+      <button mat-icon-button class="back-button" (click)="goBack()">
+        <mat-icon>keyboard_arrow_left</mat-icon>
+      </button>
+      <h3 fxLayoutAlign="center center">યોજનાઓ</h3>
+    </div>
+  
+    <!-- Cards -->  
+    <div class="cards-container" fxLayout="row wrap" fxLayoutAlign="start" fxLayoutGap="10px">
+        <!-- <h3 class="coming-soon">Coming soon</h3> -->
+        <mat-card class="project-details-card" appearance="outlined">
+            <img mat-card-image src="project/A1.jpg" alt="Photo of a Shiba Inu" style="min-height: 300px;">
+        </mat-card>
+        <mat-card class="project-details-card" appearance="outlined">
+            <img mat-card-image src="project/A2.jpg" alt="Photo of a Shiba Inu">
+        </mat-card>
+        <mat-card class="project-details-card" appearance="outlined">
+            <img mat-card-image src="project/A3.jpg" alt="Photo of a Shiba Inu">
+        </mat-card>
+          
+    </div>
+</div>

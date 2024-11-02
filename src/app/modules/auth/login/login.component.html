@@ -17,7 +17,7 @@
           </mat-form-field>
           <div id="recaptcha-container"></div>
 
-          <button mat-raised-button color="primary" type="submit" [disabled]="!loginForm.valid">
+          <button mat-raised-button color="primary" type="submit" [disabled]="!loginForm.valid || loading" [class.spinner]="loading">
             OTP મોકલો
           </button>
         </form>

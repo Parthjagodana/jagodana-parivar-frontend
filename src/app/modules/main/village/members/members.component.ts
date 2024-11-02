@@ -4,6 +4,7 @@ import { VillageService } from '../../../../shared/services/village.service';
 import { Member } from '../../../../shared/models/member.model';
 import { ActivatedRoute } from '@angular/router';
 import { Village } from '../../../../shared/models/village.model';
+import { debounceTime, distinctUntilChanged, startWith, Subject, switchMap } from 'rxjs';
 
 @Component({
   selector: 'app-members',
@@ -14,6 +15,8 @@ export class MembersComponent {
   members!: Member[];
   homeTown!: string;
   currentHomeTown!: Village;
+  searchQuery = '';
+  private searchSubject = new Subject<string>();
 
   constructor(
     private location: Location,
@@ -34,12 +37,26 @@ export class MembersComponent {
   }
 
   getMembers(homeTown: string) {
-    this.villageService.memberList({ homeTown }).subscribe((response) => {
-      this.members = response.data;
-    });
+    this.searchSubject
+      .pipe(
+        startWith(''),
+        debounceTime(300),
+        distinctUntilChanged(),
+        switchMap((search) => this.villageService.memberList({search, homeTownId: homeTown}))
+      )
+      .subscribe(
+        (response) => {
+          this.members = response.data;
+        }
+      );
+  }
+
+  onSearchChange(): void {
+    this.searchSubject.next(this.searchQuery); // Emit the search query
   }
 
   ngOnDestroy() {
-    localStorage.removeItem('current_village');
+    // localStorage.removeItem('current_village');
+    this.searchSubject.unsubscribe();
   }
 }

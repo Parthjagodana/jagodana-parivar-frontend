@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../../shared/services/auth.service';
 import { SnackBarService } from '../../../shared/services/snack-bar.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-verify-otp',
@@ -11,7 +12,7 @@ import { SnackBarService } from '../../../shared/services/snack-bar.service';
 export class VerifyOtpComponent {
   public otp: string = '';
   public config = {
-    length: 6,
+    length: 4,
     inputClass: 'otp-input',
     allowNumbersOnly: true,
     isPasswordInput: false,
@@ -28,6 +29,7 @@ export class VerifyOtpComponent {
     private router: Router,
     private authService: AuthService,
     private snackService: SnackBarService,
+    private location: Location
   ) {}
 
   ngOnInit(): void {
@@ -70,9 +72,14 @@ export class VerifyOtpComponent {
   }
 
   public submitOtp() {
-    if (this.otp.length === 6) {
+    const phoneNo = localStorage.getItem('phone_no')!;
+    if (phoneNo == null) {
+      this.router.navigate(['/auth/login']);
+    }
+    
+    if (this.otp.length === 4) {
       this.loading = true;
-      this.authService.verifyOtp({smsId: localStorage.getItem("sms_id"), otp: this.otp}).subscribe((response) => {
+      this.authService.verifyOtp({smsId: localStorage.getItem("sms_id"), otp: this.otp, phoneNo}).subscribe((response) => {
         this.loading = false;
         if (response.status !== "success") {
           this.snackService.openSnackBarError(response.message);
@@ -90,5 +97,9 @@ export class VerifyOtpComponent {
     } else {
       this.error = 'કૃપા કરીને માન્ય OTP દાખલ કરો.';
     }
+  }
+
+  goBack() {
+    this.location.back();
   }
 }

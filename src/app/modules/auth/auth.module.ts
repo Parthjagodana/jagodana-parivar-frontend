@@ -10,6 +10,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { NgOtpInputModule } from 'ng-otp-input';
 import { VerifyOtpComponent } from './verify-otp/verify-otp.component';
+import { MatIconModule } from '@angular/material/icon';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { VerifyOtpComponent } from './verify-otp/verify-otp.component';
     MatButtonModule,
     MatCardModule,
     FlexLayoutModule,
-    NgOtpInputModule
+    NgOtpInputModule,
+    MatIconModule
   ]
 })
 export class AuthModule { }

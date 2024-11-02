@@ -43,9 +43,12 @@
         <p>Resend in 00:<span>{{ timer }}</span></p>
       }
     
-      <button mat-raised-button color="primary" (click)="submitOtp()" [disabled]="otp.length !== 6 || loading"
-      [class.spinner]="loading">
+      <button mat-raised-button color="primary" (click)="submitOtp()" [disabled]="otp.length !== 4 || loading"
+      [class.spinner]="loading" style="margin-bottom: 10px;">
         લોગ ઇન કરો
+      </button>
+      <button mat-raised-button color="primary" (click)="goBack()" >
+          <mat-icon>arrow_back</mat-icon>
       </button>
     </div>
   </mat-card>

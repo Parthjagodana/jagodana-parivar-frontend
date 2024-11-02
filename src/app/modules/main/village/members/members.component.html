@@ -1,4 +1,4 @@
-<div class="container" fxLayout="column" fxLayoutAlign="start center">
+<div class="container content-page" fxLayout="column" fxLayoutAlign="start center">
     <!-- Back Button and Title -->
     <div fxLayout="row" fxLayoutAlign="start center" class="header">
       <button mat-icon-button class="back-button" (click)="goBack()">
@@ -13,19 +13,21 @@
     <div class="search-container" fxLayout="row" fxLayoutAlign="center center">
         <mat-form-field class="search-bar" appearance="outline">
           <mat-icon matPrefix>search</mat-icon>
-          <input matInput placeholder="Search here..." />
+          <input matInput [(ngModel)]="searchQuery"
+          (ngModelChange)="onSearchChange()" placeholder="Search here..." />
         </mat-form-field>
 
-        <button mat-icon-button class="filter-button">
+        <!-- <button mat-icon-button class="filter-button">
           <mat-icon>filter_list</mat-icon>
-        </button>
+        </button> -->
       </div>      
   
     <!-- Cards -->  
     <div class="cards-container member-list" fxLayout="row wrap" fxLayoutAlign="start" fxLayoutGap="10px">
         <mat-card class="item-card" *ngFor="let item of members" fxFlex="48" fxFlex.lt-sm="100" [routerLink]="'/app/member/' + item._id">
-            <div *ngIf="item.profile_image" class="profile-img">
+            <div class="profile-img">
                 <img mat-card-image [src]="item.profile_image" *ngIf="item.profile_image" alt="Profile Image" />
+                <svg *ngIf="!item.profile_image" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="16" height="16" fill="#D9D9D9"/><path d="M8 8C9.65685 8 11 6.65685 11 5C11 3.34315 9.65685 2 8 2C6.34315 2 5 3.34315 5 5C5 6.65685 6.34315 8 8 8Z" fill="#AAAAAA"/><path d="M14 13C14 11.3431 12.6569 10 11 10H5C3.34315 10 2 11.3431 2 13V16H14V13Z" fill="#AAAAAA"/></svg>
             </div>
             <mat-card-content>
               <h3>{{ item.name }}</h3>
